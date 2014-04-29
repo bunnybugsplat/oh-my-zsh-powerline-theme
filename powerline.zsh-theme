@@ -6,6 +6,8 @@ fi
 
 if [ "$POWERLINE_RIGHT_B" = "" ]; then
   POWERLINE_RIGHT_B=%D{%H:%M:%S}
+elif [ "$POWERLINE_RIGHT_B" = "mixed" ]; then
+  POWERLINE_RIGHT_B=%D{%H:%M:%S}" "%(?.%F{green}✔.%F{red}✘ %?)
 elif [ "$POWERLINE_RIGHT_B" = "none" ]; then
   POWERLINE_RIGHT_B=""
 fi
