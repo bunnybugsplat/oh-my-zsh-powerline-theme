@@ -15,7 +15,7 @@ fi
 if [ "$POWERLINE_RIGHT_A" = "mixed" ]; then
   POWERLINE_RIGHT_A=%(?."$POWERLINE_DATE_FORMAT".%F{red}✘ %?)
 elif [ "$POWERLINE_RIGHT_A" = "exit-status" ]; then
-  POWERLINE_RIGHT_A=%(?.%F{green}✔ %?.%F{red}✘ %?)
+  POWERLINE_RIGHT_A=%(?.%F{green}✔.%F{red}✘ %?)
 elif [ "$POWERLINE_RIGHT_A" = "date" ]; then
   POWERLINE_RIGHT_A="$POWERLINE_DATE_FORMAT"
 fi
@@ -128,6 +128,6 @@ if [ "$POWERLINE_DISABLE_RPROMPT" = "" ]; then
     elif [ "$POWERLINE_RIGHT_B" = "" ]; then
         RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{240}%K{white} $POWERLINE_RIGHT_A %f%k"
     else
-        RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%F{240}"$'\ue0b2'"%f%k%K{240}%F{255} $POWERLINE_RIGHT_A %f%k"
+        RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%F{10}"$'\ue0b2'"%f%k%K{10}%F{white} $POWERLINE_RIGHT_A %f%k"
     fi
 fi
