@@ -37,11 +37,11 @@ if [ "$POWERLINE_FULL_CURRENT_PATH" = "" ]; then
 fi
 
 if [ "$POWERLINE_GIT_CLEAN" = "" ]; then
-  POWERLINE_GIT_CLEAN="✔"
+  POWERLINE_GIT_CLEAN="%F{green}✔%F{black}"
 fi
 
 if [ "$POWERLINE_GIT_DIRTY" = "" ]; then
-  POWERLINE_GIT_DIRTY="✘"
+  POWERLINE_GIT_DIRTY="%F{red}✘%F{black}"
 fi
 
 if [ "$POWERLINE_GIT_ADDED" = "" ]; then
