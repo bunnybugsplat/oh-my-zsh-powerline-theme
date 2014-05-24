@@ -20,6 +20,24 @@ elif [ "$POWERLINE_RIGHT_A" = "date" ]; then
   POWERLINE_RIGHT_A="$POWERLINE_DATE_FORMAT"
 fi
 
+if [ $(id -u) -eq 0 ]; then
+    POWERLINE_SEC1_BG=%K{red}
+    POWERLINE_SEC1_FG=%F{red}
+else
+    POWERLINE_SEC1_BG=%K{green}
+    POWERLINE_SEC1_FG=%F{green}
+fi
+POWERLINE_SEC1_TXT=%F{black}
+if [ "$POWERLINE_DETECT_SSH" != "" ]; then
+  if [ -n "$SSH_CLIENT" ]; then
+    POWERLINE_SEC1_BG=%K{red}
+    POWERLINE_SEC1_FG=%F{red}
+    POWERLINE_SEC1_TXT=%F{white}
+    POWERLINE_HIDE_USER_NAME=""
+    POWERLINE_HIDE_HOST_NAME=""
+  fi
+fi
+
 if [ "$POWERLINE_HIDE_USER_NAME" = "" ] && [ "$POWERLINE_HIDE_HOST_NAME" = "" ]; then
     POWERLINE_USER_NAME="%n@%M"
 elif [ "$POWERLINE_HIDE_USER_NAME" != "" ] && [ "$POWERLINE_HIDE_HOST_NAME" = "" ]; then
@@ -100,21 +118,6 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
     fi
 # fi
 
-if [ $(id -u) -eq 0 ]; then
-    POWERLINE_SEC1_BG=%K{red}
-    POWERLINE_SEC1_FG=%F{red}
-else
-    POWERLINE_SEC1_BG=%K{green}
-    POWERLINE_SEC1_FG=%F{green}
-fi
-POWERLINE_SEC1_TXT=%F{black}
-if [ "$POWERLINE_DETECT_SSH" != "" ]; then
-  if [ -n "$SSH_CLIENT" ]; then
-    POWERLINE_SEC1_BG=%K{red}
-    POWERLINE_SEC1_FG=%F{red}
-    POWERLINE_SEC1_TXT=%F{white}
-  fi
-fi
 PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME %k%f$POWERLINE_SEC1_FG%K{blue}"$'\ue0b0'"%k%f%F{white}%K{blue} "$POWERLINE_CURRENT_PATH"%F{blue}"$POWERLINE_GIT_INFO_LEFT" %k"$'\ue0b0'"%f "
 
 if [ "$POWERLINE_NO_BLANK_LINE" = "" ]; then
