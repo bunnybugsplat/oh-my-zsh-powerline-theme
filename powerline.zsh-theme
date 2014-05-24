@@ -33,7 +33,6 @@ if [ "$POWERLINE_DETECT_SSH" != "" ]; then
     POWERLINE_SEC1_BG=%K{red}
     POWERLINE_SEC1_FG=%F{red}
     POWERLINE_SEC1_TXT=%F{white}
-    POWERLINE_HIDE_USER_NAME=""
     POWERLINE_HIDE_HOST_NAME=""
   fi
 fi
