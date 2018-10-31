@@ -49,43 +49,6 @@ fi
 
 POWERLINE_CURRENT_PATH="%~"
 
-if [ "$POWERLINE_FULL_CURRENT_PATH" = "" ]; then
-  POWERLINE_CURRENT_PATH="%1~"
-fi
-
-if [ "$POWERLINE_GIT_CLEAN" = "" ]; then
-  POWERLINE_GIT_CLEAN="%F{green}✔%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_DIRTY" = "" ]; then
-  POWERLINE_GIT_DIRTY="%F{red}✘%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_ADDED" = "" ]; then
-  POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_MODIFIED" = "" ]; then
-  POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_DELETED" = "" ]; then
-  POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_UNTRACKED" = "" ]; then
-  POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
-fi
-
-if [ "$POWERLINE_GIT_RENAMED" = "" ]; then
-  POWERLINE_GIT_RENAMED="➜"
-fi
-
-if [ "$POWERLINE_GIT_UNMERGED" = "" ]; then
-  POWERLINE_GIT_UNMERGED="═"
-fi
-
-
 ZSH_THEME_GIT_PROMPT_PREFIX="  "
 ZSH_THEME_GIT_PROMPT_SUFFIX="$GIT_PROMPT_INFO"
 ZSH_THEME_GIT_PROMPT_DIRTY=" $GIT_DIRTY_COLOR✘"
